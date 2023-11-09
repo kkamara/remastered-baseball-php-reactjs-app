@@ -1,31 +1,31 @@
 
 import HttpService from '../../services/HttpService'
-import { users, } from '../types'
+import { playerInformation, } from '../types'
 
-export const getUsers = page => {
+export const getPlayerInformation = (playerId) => {
   return async dispatch => {
     const http = new HttpService()
         
-    dispatch({ type: users.GET_USERS_PENDING, })
+    dispatch({ type: playerInformation.GET_PLAYER_INFORMATION_PENDING, })
 
     const tokenId = "user-token"
-    const path = page ? 'users/?page='+page : 'users'
+    const path = 'v1/player-information?playerId='+playerId
     await new Promise((resolve, reject) => {
       http.getData(http.domain+'/sanctum/csrf-cookie').then( 
         http.getData(path, tokenId).then(res => {
           resolve(dispatch({
-            type: users.GET_USERS_SUCCESS,
+            type: playerInformation.GET_PLAYER_INFORMATION_SUCCESS,
             payload: res.data.data,
           }))                
         }, error => {
           reject(dispatch({ 
-            type : users.GET_USERS_ERROR, 
+            type : playerInformation.GET_PLAYER_INFORMATION_ERROR, 
             payload: error,
           }))
         })
       ).catch(error => {
         reject(dispatch({ 
-          type : users.GET_USERS_ERROR, 
+          type : playerInformation.GET_PLAYER_INFORMATION_ERROR, 
           payload: error,
         }))
       })
