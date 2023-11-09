@@ -28,14 +28,6 @@ export default function BaseballComponent() {
     }
   }, [state.auth,])
 
-  const handlePageChange = ({ selected, }) => {
-    const newPage = selected + 1
-    if (selected > state.users.data.last_page) {
-      return
-    }
-    dispatch(getUsers(newPage))
-  }
-
   if (!state.auth.loading && typeof state.auth.data === 'object' && null !== state.auth.data) {
     console.log('authenticated', state.auth.data)
   }
