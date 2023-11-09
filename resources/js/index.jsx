@@ -2,6 +2,7 @@ import React from 'react'
 import { createRoot, } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { Helmet } from 'react-helmet'
+import { PhotoProvider } from 'react-image-previewer'
 
 import App from './App'
 import store from './redux/store'
@@ -29,7 +30,9 @@ root.render(
       />
     </Helmet>
     <Provider store={store}>
-      <App />
+      <PhotoProvider>
+        <App />
+      </PhotoProvider>
     </Provider>
   </React.StrictMode>
 )

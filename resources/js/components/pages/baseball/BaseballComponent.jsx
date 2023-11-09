@@ -1,8 +1,10 @@
 import React, { useEffect, useState, } from 'react'
 import { useNavigate, } from 'react-router-dom'
 import { useDispatch, useSelector, } from 'react-redux'
+import { PhotoView } from 'react-image-previewer';
 import moment from 'moment'
 import { getPlayerList, } from '../../../redux/actions/playerListActions'
+import { getPlayerInformation, } from '../../../redux/actions/playerInformationActions'
 import { authorize } from '../../../redux/actions/authActions'
 
 import "./BaseballComponent.scss"
@@ -36,6 +38,8 @@ export default function BaseballComponent() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
+
+    dispatch(getPlayerInformation(playerId))
   }
 
   const renderPlayerIdOptions = () => {
@@ -54,7 +58,7 @@ export default function BaseballComponent() {
     const {
       longName,
       bat,
-      throw,
+      throw: throwingHand,
       playerID,
       mlbIDFull,
       height,
@@ -70,7 +74,24 @@ export default function BaseballComponent() {
       team,
     } = state.playerInformation.data
     return <div className="card">
-      test
+      <div className="card-header">
+        <div className="row">
+          <PhotoView src={mlbHeadshot}>
+            <img 
+              src={mlbHeadshot} 
+              alt="mlb-headshot" 
+              className="headshot"
+            />
+          </PhotoView>
+          <PhotoView src={espnHeadshot}>
+            <img 
+              src={espnHeadshot} 
+              alt="espn-headshot"  
+              className="headshot"
+            />
+          </PhotoView>
+        </div>
+      </div>
     </div>
   }
 

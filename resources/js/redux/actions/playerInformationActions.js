@@ -8,6 +8,13 @@ export const getPlayerInformation = (playerId) => {
         
     dispatch({ type: playerInformation.GET_PLAYER_INFORMATION_PENDING, })
 
+    if (!playerId.length) {
+      return dispatch({
+        type: playerInformation.GET_PLAYER_INFORMATION_SUCCESS,
+        payload: null,
+      })
+    }
+
     const tokenId = "user-token"
     const path = 'v1/player-information?playerId='+playerId
     await new Promise((resolve, reject) => {
@@ -16,7 +23,7 @@ export const getPlayerInformation = (playerId) => {
           resolve(dispatch({
             type: playerInformation.GET_PLAYER_INFORMATION_SUCCESS,
             payload: res.data.data.body,
-          }))                
+          }))
         }, error => {
           reject(dispatch({ 
             type : playerInformation.GET_PLAYER_INFORMATION_ERROR, 
