@@ -28,22 +28,42 @@ export default function BaseballComponent() {
     }
   }, [state.auth,])
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault()
+  }
+
   if (!state.auth.loading && typeof state.auth.data === 'object' && null !== state.auth.data) {
     console.log('authenticated', state.auth.data)
   }
-  console.log("playerList", state.playerList)
   if (state.auth.loading) {
     return <p>Loading...</p>
   }
 
   return (
     <>
-      <div className='container'>
-        <br />
-        <br />
-        <button className='btn btn-primary'>
-          Test button
-        </button>
+      <div className='container baseball-container'>
+        <div className="row">
+          <div className="col-md-6">
+            <form className="form" onSubmit={handleFormSubmit}>
+              <div className="form-group player-id-container">
+                <label htmlFor="playerId">Choose player</label>
+                <select 
+                  className='form-control'
+                  name="playerId" 
+                  id="player-id"
+                >
+                  <option value="">None selected</option>
+                </select>
+              </div>
+              <input 
+                value="Go"
+                type="submit" 
+                className="btn btn-lg btn-success" 
+              />
+            </form>
+          </div>
+          <div className="col-md-6"></div>
+        </div>
       </div>
     </>       
   )
