@@ -1,4 +1,4 @@
-import React, { useEffect, } from 'react'
+import React, { useEffect, useState, } from 'react'
 import { useNavigate, } from 'react-router-dom'
 import { useDispatch, useSelector, } from 'react-redux'
 import moment from 'moment'
@@ -8,6 +8,7 @@ import { authorize } from '../../../redux/actions/authActions'
 import "./BaseballComponent.scss"
 
 export default function BaseballComponent() {
+  const [playerId, setPlayerId] = useState("")
   const navigate = useNavigate()
 
   const dispatch = useDispatch()
@@ -28,8 +29,21 @@ export default function BaseballComponent() {
     }
   }, [state.auth,])
 
+  const handleChangePlayerId = (e) => {
+    setPlayerId(e.target.value)
+  }
+
   const handleFormSubmit = (e) => {
     e.preventDefault()
+  }
+
+  const renderPlayerIdOptions = () => {
+    if (!state.playerList.data) {
+      return null
+    }
+    return state.playerList.data.map(({ longName, playerID}, key) => (
+      <option key={key} value={playerID}>{longName}</option>
+    ))
   }
 
   if (!state.auth.loading && typeof state.auth.data === 'object' && null !== state.auth.data) {
@@ -51,8 +65,11 @@ export default function BaseballComponent() {
                   className='form-control'
                   name="playerId" 
                   id="player-id"
+                  onChange={handleChangePlayerId}
+                  value={playerId}
                 >
                   <option value="">None selected</option>
+                  {renderPlayerIdOptions()}
                 </select>
               </div>
               <input 
