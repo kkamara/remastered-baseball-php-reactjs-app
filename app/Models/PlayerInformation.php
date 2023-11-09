@@ -20,7 +20,7 @@ class PlayerInformation extends Model
 
             $response = $client->request(
                 'GET', 
-                'https://'.config("app.rapid_api_host").'/getMLBPlayerInfo?getStats=false&playerId='.$playerId, 
+                'https://'.config("app.rapid_api_host").'/getMLBPlayerInfo?getStats=false&playerID='.$playerId, 
                 ['headers' => [
                     'X-RapidAPI-Host' => config("app.rapid_api_host"),
                     'X-RapidAPI-Key' => config("app.rapid_api_key"),
