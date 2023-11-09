@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Web\V1\PlayerListController;
+use App\Http\Controllers\Web\V1\PlayerInformationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Web\UserController as WebUserController;
@@ -24,6 +25,10 @@ Route::prefix('web')
                 "player-list", 
                 [PlayerListController::class, "getPlayerList"]
             )->name("getPlayerList");
+            Route::get(
+                "player-information", 
+                [PlayerInformationController::class, "getPlayerInformation"]
+            )->name("getPlayerInformation");
         });
         Route::prefix('/user')->group(function () {
             Route::post('/register', [WebUserController::class,'register']);
