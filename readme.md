@@ -4,6 +4,8 @@
 
 (08-Nov-2023) Search Baseball player data in a Reactjs app. A GDPR compliant Laravel 10.x app with Redux.
 
+* [Tinker](#tinker)
+
 * [Using Thunder Client?](#using-thunder-client)
 
 * [Installation](#installation)
@@ -25,6 +27,25 @@
 * [Contributing](#contributing)
 
 * [License](#license)
+
+## Tinker
+
+```bash
+php artisan tinker
+> $playerList = new App\Models\PlayerList();
+> $res = $playerList->getPlayerList();
+> $d = json_decode($res, true);
+= [
+    "statusCode" => 200,
+    "body" => [
+      [
+        "playerID" => "571656",
+        "team" => "",
+        "longName" => "Buck Farmer",
+        "teamID" => "",
+      ],
+      ...
+```
 
 ## Using Thunder Client?
 
