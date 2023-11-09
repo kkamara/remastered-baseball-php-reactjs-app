@@ -4,6 +4,7 @@ import { Routes, Route, } from 'react-router-dom'
 import Header from './components/layouts/Header'
 import Footer from './components/layouts/Footer'
 
+import Baseball from "./components/pages/baseball/BaseballComponent"
 import Home from "./components/pages/HomeComponent"
 import Login from "./components/pages/auth/LoginComponent"
 import Logout from "./components/pages/auth/LogoutComponent"
@@ -20,6 +21,7 @@ export default () => {
         <Route path={url("/user/login")} element={<Login />}/>
         <Route path={url("/user/logout")} element={<Logout />}/>
         <Route path={url("/user/register")} element={<Register />}/>
+        <Route path={url("/baseball")} element={<Baseball />}/>
       </Routes>
       <Footer/>
     </>

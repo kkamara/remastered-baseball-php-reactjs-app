@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\V1\PlayerListController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Web\UserController as WebUserController;
@@ -18,6 +19,12 @@ use App\Http\Controllers\Web\UserController as WebUserController;
 Route::prefix('web')
     ->group(function() {
         // Add single page app api routes
+        Route::prefix('/v1')->group(function () {
+            Route::get(
+                "player-list", 
+                [PlayerListController::class, "getPlayerList"]
+            )->name("getPlayerList");
+        });
         Route::prefix('/user')->group(function () {
             Route::post('/register', [WebUserController::class,'register']);
             Route::post('/', [WebUserController::class,'login']);

@@ -15,7 +15,7 @@ export const getPlayerInformation = (playerId) => {
         http.getData(path, tokenId).then(res => {
           resolve(dispatch({
             type: playerInformation.GET_PLAYER_INFORMATION_SUCCESS,
-            payload: res.data.data,
+            payload: res.data.data.body,
           }))                
         }, error => {
           reject(dispatch({ 

@@ -15,7 +15,7 @@ export const getPlayerList = () => {
         http.getData(path, tokenId).then(res => {
           resolve(dispatch({
             type: playerList.GET_PLAYER_LIST_SUCCESS,
-            payload: res.data.data,
+            payload: res.data.data.body,
           }))                
         }, error => {
           reject(dispatch({ 
