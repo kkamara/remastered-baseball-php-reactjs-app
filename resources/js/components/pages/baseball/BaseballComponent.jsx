@@ -15,6 +15,7 @@ export default function BaseballComponent() {
   const state = useSelector(state => ({
     auth: state.auth,
     playerList: state.playerList,
+    playerInformation: state.playerInformation,
   }))
 
   useEffect(() => {
@@ -46,9 +47,37 @@ export default function BaseballComponent() {
     ))
   }
 
+  const renderPlayerInformation = () => {
+    if (!state.playerInformation.data) {
+      return null
+    }
+    const {
+      longName,
+      bat,
+      throw,
+      playerID,
+      mlbIDFull,
+      height,
+      lastGamePlayed,
+      pos,
+      mlbLink,
+      bDay,
+      espnID,
+      mlbHeadshot,
+      espnHeadshot,
+      weight,
+      jerseyNum,
+      team,
+    } = state.playerInformation.data
+    return <div className="card">
+      test
+    </div>
+  }
+
   if (!state.auth.loading && typeof state.auth.data === 'object' && null !== state.auth.data) {
     console.log('authenticated', state.auth.data)
   }
+  console.log("playerInformation", state.playerInformation.data)
   if (state.auth.loading) {
     return <p>Loading...</p>
   }
@@ -79,7 +108,9 @@ export default function BaseballComponent() {
               />
             </form>
           </div>
-          <div className="col-md-6"></div>
+          <div className="col-md-6">
+            {renderPlayerInformation()}
+          </div>
         </div>
       </div>
     </>       
