@@ -5,9 +5,9 @@ use Illuminate\Support\ServiceProvider;
 
 return [
 
-    "RAPID_API_KEY" => env("RAPID_API_KEY"),
+    "rapid_api_key" => env("RAPID_API_KEY"),
 
-    "RAPID_API_HOST" => env("RAPID_API_HOST", "tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com"),
+    "rapid_api_host" => env("RAPID_API_HOST", "tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com"),
 
     /*
     |--------------------------------------------------------------------------
