@@ -94,7 +94,12 @@ export default function BaseballComponent() {
       </div>
       <div className="card-body">
         <div className="row">
-          <p className="lead">{longName}</p>
+          <p className="lead">
+            {longName}&nbsp;
+            <small className="player-id">
+              ({playerID})
+            </small>
+          </p>
           <table class="table">
             <tbody>
               <tr>
