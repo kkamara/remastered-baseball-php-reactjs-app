@@ -120,7 +120,30 @@ export default function BaseballComponent() {
                   <strong>Birthday:</strong> {bDay}&nbsp;
                   ({getAge(bDay)})
                 </td>
-                <td></td>
+                <td>
+                  <strong>Position:</strong>&nbsp;
+                  {pos}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Weight:</strong>
+                  {weight}
+                </td>
+                <td>
+                  <strong>Jersey Number:</strong>&nbsp;
+                  {jerseyNum}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Team:</strong>&nbsp;
+                  {team ? team : "None"}
+                </td>
+                <td>
+                  <strong>Throwing Hand:</strong>&nbsp;
+                  {throwingHand}
+                </td>
               </tr>
             </tbody>
           </table>
