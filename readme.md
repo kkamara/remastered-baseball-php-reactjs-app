@@ -1,4 +1,4 @@
-<img src="https://github.com/kkamara/useful/blob/main/baseball-php-reactjs-app2.png?raw=true" alt="baseball-php-reactjs-app2.png" width=""/>
+<img src="https://github.com/kkamara/useful/blob/main/remastered-baseball-php-reactjs-app.png?raw=true" alt="remastered-baseball-php-reactjs-app.png" width=""/>
 
 <img src="https://github.com/kkamara/useful/blob/main/baseball-php-reactjs-app.png?raw=true" alt="baseball-php-reactjs-app.png" width=""/>
 
