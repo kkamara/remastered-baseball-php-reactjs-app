@@ -73,7 +73,7 @@ export default function BaseballComponent() {
       jerseyNum,
       team,
     } = state.playerInformation.data
-    return <div className="card">
+    return <div className="card baseball-card">
       <div className="card-header">
         <div className="row">
           {mlbHeadshot ? <PhotoView src={mlbHeadshot}>
@@ -90,6 +90,23 @@ export default function BaseballComponent() {
                 className="headshot"
               />
             </PhotoView> : null}
+        </div>
+      </div>
+      <div className="card-body">
+        <div className="row">
+          <p className="lead">{longName}</p>
+          <table class="table">
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <strong>Bat:</strong> {bat}
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
