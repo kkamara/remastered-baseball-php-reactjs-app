@@ -108,9 +108,9 @@ export default function BaseballComponent() {
           <table class="table">
             <tbody>
               <tr>
-                <th scope="row">
+                <td>
                   <strong>Bat:</strong> {bat}
-                </th>
+                </td>
                 <td>
                   <strong>Height:</strong> {height}
                 </td>
