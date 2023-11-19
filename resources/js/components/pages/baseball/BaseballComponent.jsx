@@ -51,6 +51,11 @@ export default function BaseballComponent() {
     ))
   }
 
+  const getAge = (bDay) => {
+    const time = moment(bDay, "MM/DD/YYYY")
+    return time.from(moment())
+  }
+
   const renderPlayerInformation = () => {
     if (!state.playerInformation.data) {
       return null
@@ -109,7 +114,12 @@ export default function BaseballComponent() {
                 <td>
                   <strong>Height:</strong> {height}
                 </td>
-                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Birthday:</strong> {bDay}&nbsp;
+                  ({getAge(bDay)})
+                </td>
                 <td></td>
               </tr>
             </tbody>
