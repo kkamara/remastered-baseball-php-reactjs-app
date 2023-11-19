@@ -1,8 +1,8 @@
 {
-    "name": "kkamara/baseball-php-reactjs-app",
+    "name": "kkamara/remastered-baseball-php-reactjs-app",
     "version": "0.3.2",
     "type": "project",
-    "description": "(08-Nov-2023) Search Baseball player data in a Reactjs app. A GDPR compliant Laravel 10.x app with Redux.",
+    "description": "(19-Nov-2023) Remastered version. Search Baseball player data in a Reactjs app. A GDPR compliant Laravel 10.x app with Redux.",
     "keywords": [
         "web",
         "web-app",

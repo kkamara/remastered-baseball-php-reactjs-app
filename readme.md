@@ -2,9 +2,9 @@
 
 <img src="https://github.com/kkamara/useful/blob/main/baseball-php-reactjs-app.png?raw=true" alt="baseball-php-reactjs-app.png" width=""/>
 
-# Baseball PHP Reactjs App [![API](https://github.com/kkamara/php-reactjs-boilerplate/actions/workflows/build.yml/badge.svg)](https://github.com/kkamara/php-reactjs-boilerplate/actions/workflows/build.yml)
+# Remastered Baseball PHP Reactjs App [![API](https://github.com/kkamara/php-reactjs-boilerplate/actions/workflows/build.yml/badge.svg)](https://github.com/kkamara/php-reactjs-boilerplate/actions/workflows/build.yml)
 
-(08-Nov-2023) Search Baseball player data in a Reactjs app. A GDPR compliant Laravel 10.x app with Redux.
+(19-Nov-2023) Remastered version. Search Baseball player data in a Reactjs app. A GDPR compliant Laravel 10.x app with Redux.
 
 * [Tinker](#tinker)
 
