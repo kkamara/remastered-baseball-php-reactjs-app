@@ -76,20 +76,20 @@ export default function BaseballComponent() {
     return <div className="card">
       <div className="card-header">
         <div className="row">
-          <PhotoView src={mlbHeadshot}>
-            <img 
-              src={mlbHeadshot} 
-              alt="mlb-headshot" 
-              className="headshot"
-            />
-          </PhotoView>
-          <PhotoView src={espnHeadshot}>
-            <img 
-              src={espnHeadshot} 
-              alt="espn-headshot"  
-              className="headshot"
-            />
-          </PhotoView>
+          {mlbHeadshot ? <PhotoView src={mlbHeadshot}>
+              <img 
+                src={mlbHeadshot} 
+                alt="mlb-headshot" 
+                className="headshot"
+              />
+            </PhotoView> : null}
+          {espnHeadshot ? <PhotoView src={espnHeadshot}>
+              <img 
+                src={espnHeadshot} 
+                alt="espn-headshot"  
+                className="headshot"
+              />
+            </PhotoView> : null}
         </div>
       </div>
     </div>
